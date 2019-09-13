@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ["5", "14", "20", "64", "70", "93", "10", "49", "23", "81"],
+            max = arr[0],
+            i = 0;
+        for (; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        document.write("max: " + max + "</br>");
+        for(let j=0;j<arr.length;j++){
+            if (max == arr[j]){
+        document.write("position: " + j);}
+        }
+    </script>
+</body>
+
+</html>
