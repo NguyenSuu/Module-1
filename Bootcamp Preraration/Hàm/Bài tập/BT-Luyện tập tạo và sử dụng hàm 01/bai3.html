@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number1 = parseInt(prompt("Nhập giá trị thứ nhất")),
+            number2 = parseInt(prompt("Nhập giá trị thứ hai")),
+            sum = 0;
+        function caculatorSum(number1, number2) {
+            if (number1 < number2) {
+                alert("Giá trị thứ nhật không bé hơn giá trị thứ hai");
+            } else {
+                sum = number1 + number2;
+                alert("Tổng hai số " + number1 + " và " + number2 + " là " + sum);
+            }
+        }
+        caculatorSum(number1, number2);
+    </script>
+</body>
+
+</html>

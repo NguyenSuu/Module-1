@@ -13,16 +13,16 @@
         let num = parseInt(prompt("Nhập số phân tử trong mảng")),
             arr = [];
         for (let i = 0; i < num; i++) {
-            arr[i] = prompt("Nhập giá trị phân tử tại vị trí " + i);
-        }
-        for (let j = 0;j < arr.length; j++) {
-            for (let k = 1; k< arr[j].length; k++) {
-                if (arr[j][k] == "-") {
-                    arr[j][k] = "_";
+            let name = prompt("Nhập giá trị phân tử tại vị trí " + i);
+            let n = name.length;
+            for (let j = 0; j < n; j++) {
+                arr[j] = name[j];
+                if (arr[j] == "-") {
+                    arr[j] = '_';
                 }
             }
+            document.write(arr.join(" ") + ',');
         }
-        document.write("Mảng đã được thay thế: " + arr);
     </script>
 </body>
 
