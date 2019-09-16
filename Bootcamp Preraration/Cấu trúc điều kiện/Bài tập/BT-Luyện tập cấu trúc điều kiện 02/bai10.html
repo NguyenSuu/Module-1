@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numkWh=parseInt(prompt("Số kWh sử dụng")),
+            money;
+        if(numkWh<50){
+            money=numkWh*1.549;
+        }else if(numkWh<100){
+            money=(50*1.549)+(numkWh-50)*1.600;
+        }else if(numkWh<200){
+            money=(50*1.549)+(50*1.600)+(numkWh-100)*1.858;
+        }else if(numkWh<300){
+            money=(50*1.549)+(50*1.600)+(100*1.858)+(numkWh-200)*2.340;
+        }else if(numkWh<400){
+            money=(50*1.549)+(50*1.600)+(100*1.858)+(100*2.340)+(numkWh-300)*2.615;
+        }else{
+            money=(50*1.549)+(50*1.600)+(100*1.858)+(100*2.340)+(100*2.615)+(numkWh-400)*2.701;
+        }
+        alert("Số tiền phải trả "+money+" nghìn đồng");
+    </script>
+</body>
+</html>

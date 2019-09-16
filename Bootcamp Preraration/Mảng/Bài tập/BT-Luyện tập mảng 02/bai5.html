@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let test1 = prompt("Nhập chuỗi thứ nhất"),
+            test2 = prompt("Nhập chuỗi thứ hai"),
+            count=0;
+        for(let i=0;i<test1.length&&i<test2.length;i++){
+            if(test1[i]=test2[i]){
+                count=count+1;
+            }
+        }
+        if(count==test1.length&&count==test2.length){
+            alert("Hai chuổi giống nhau");
+        }else{
+            alert("Hai chuổi khác nhau");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let salary=parseInt(prompt("Mức lương mỗi tháng")),
+            taxTNCN;
+        if(salary<5000000){
+            taxTNCN=salary*5/100;
+        }else if(salary<10000000){
+            taxTNCN=salary*10/100-2500000;
+        }else if(salary<18000000){
+            taxTNCN=salary*15/100-75000;
+        }else if(salary<32000000){
+            taxTNCN=salary*20/100-1650000;
+        }else if(salary<52000000){
+            taxTNCN=salary*25/100-3200000;
+        }else if(salary<80000000){
+            taxTNCN=salary*30/100-5850000;
+        }else{
+            taxTNCN=salary*35/100-9850000;
+        }
+        alert("Tiền thuế phải đóng "+taxTNCN);
+    </script>
+</body>
+</html>

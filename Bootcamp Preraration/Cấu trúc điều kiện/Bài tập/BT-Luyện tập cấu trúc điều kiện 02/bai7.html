@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Phương trình bậc 2</legend>
+        <h3>Nhập a</h3>
+        <input type="text" id="valueA"></inpur>
+        <h3>Nhập b</h3>
+        <input type="text" id="valueB"></inpur>
+        <h3>Nhập c</h3>
+        <input type="text" id="valueC"></inpur>
+        <input type="submit" value="Finish" onclick="check()">
+    </fieldset>
+    <script>
+        function check() {
+            let a = document.getElementById("valueA").value,
+                b = document.getElementById("valueB").value,
+                c = document.getElementById("valueC").value,
+                denta = b * b - 4 * a * c;
+            if (denta < 0) {
+                alert("Phương trình vô nghiệm");
+            } else if (denta == 0) {
+                alert("Phương trình có một nghiệm kép x=-b/2a= " + (-b / 2 * a));
+            } else {
+                alert("Phương trình có hai nghiệm phân biệt x1= " + (-b + Math.sqrt(denta) / (2 * a))
+                    + " x2= " + (-b - Math.sqrt(denta) / (2 * a)));
+            }
+        }
+    </script>
+</body>
+
+</html>
