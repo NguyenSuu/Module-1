@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <label>Meter</label>
-    <input type="number" placeholder="Meter" oninput="dramConverter(this.value)" onchange="dramConverter(this.value)" id="changeMeter">
+    <input type="number" placeholder="Meter" oninput="dramConverter(this.value)" onchange="dramConverter(this.value)"
+        id="changeMeter">
     <label>Feet</label>
-    <input type="number" placeholder="Feet" oninput="dramConverter1(this.value)" onchange="dramConverter1(this.value)" id="changeFeet"></br>
+    <input type="number" placeholder="Feet" oninput="dramConverter1(this.value)" onchange="dramConverter1(this.value)"
+        id="changeFeet"></br>
     <p id="result"></p>
     <script>
-        function dramConverter(number){
-            number=parseFloat(number);
-            document.getElementById("result").innerHTML="Feet"+" "+number*3.279;
-                   }
-        function dramConverter1(number){
-            number=parseFloat(number);
-            document.getElementById("result").innerHTML="Meter"+" "+number*0.305;
+        function dramConverter(number) {
+            number = parseFloat(number);
+            document.getElementById("result").innerHTML = "Feet" + " " + number * 3.279;
+        }
+        function dramConverter1(number) {
+            number = parseFloat(number);
+            document.getElementById("result").innerHTML = "Meter" + " " + number * 0.305;
         }
     </script>
 </body>
+
 </html>

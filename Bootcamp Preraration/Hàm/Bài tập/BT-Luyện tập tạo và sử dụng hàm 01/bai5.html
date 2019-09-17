@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'],
+            constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'],
+            nameStar = prompt("Enter a star"),
+            count = 0;
+        function change() {
+            for (let i = 0; i < stars.length; i++) {
+                if (nameStar == stars[i]) {
+                    alert("Name of constallation is " + constellation[i]);
+                    break;
+                }
+                count = count + 1;
+            }
+            if (count == stars.length) {
+                alert("star wasn't found");
+            }
+        }
+        change(nameStar);
+    </script>
+</body>
+
+</html>
