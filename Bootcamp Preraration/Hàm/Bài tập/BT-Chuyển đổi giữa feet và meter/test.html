@@ -9,21 +9,25 @@
 </head>
 
 <body>
-    <label>Meter</label>
-    <input type="number" placeholder="Meter" oninput="dramConverter(this.value)" onchange="dramConverter(this.value)"
-        id="changeMeter">
-    <label>Feet</label>
-    <input type="number" placeholder="Feet" oninput="dramConverter1(this.value)" onchange="dramConverter1(this.value)"
-        id="changeFeet"></br>
-    <p id="result"></p>
+    <fieldset style="width:20%">
+        <legend>Convert Feet-Meter</legend>
+        <label>Meter</label></br>
+        <input type="number" placeholder="Meter" oninput="dramConverter(this.value)"
+            onchange="dramConverter(this.value)" id="changeMeter"></br>
+        <p id="result">=</p></br>
+        <label>Feet</label></br>
+        <input type="number" placeholder="Feet" oninput="dramConverter1(this.value)"
+            onchange="dramConverter1(this.value)" id="changeFeet"></br>
+        <p id="result1">=</p>
+    </fieldset>
     <script>
         function dramConverter(number) {
             number = parseFloat(number);
-            document.getElementById("result").innerHTML = "Feet" + " " + number * 3.279;
+            document.getElementById("result").innerHTML = "=" + " " + number * 3.279 + " " + "Feet";
         }
         function dramConverter1(number) {
             number = parseFloat(number);
-            document.getElementById("result").innerHTML = "Meter" + " " + number * 0.305;
+            document.getElementById("result1").innerHTML = "=" + " " + number * 0.305 + " " + "Meter";
         }
     </script>
 </body>

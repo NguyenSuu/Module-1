@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function caculator(){
+            let arr=[];
+            for(let i=0;i<3;i++){
+                arr[i]=parseInt(prompt("Enter a number"));
+            }
+            let min=arr[0];
+            for(let j=0;j<arr.length;j++){
+                if(min>arr[j]){
+                    min=arr[j];
+                }
+            }
+            return min;
+        }
+        alert("minimum value of 3 numbers entered "+caculator());
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function check() {
+            let arr = [];
+            for (let k = 0; k < 3; k++) {
+                arr[k] = prompt("Enter any character into an array");
+            }
+            let test = prompt("Enter any character");
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    if (arr[i][j] == test) {
+                        count = count + 1;
+                    }
+                }
+            }
+            if (count == 0) {
+                count = -1;
+            }
+            return count;
+        }
+        alert(check());
+    </script>
+</body>
+
+</html>
