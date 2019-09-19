@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            height: 100px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            height: 50px;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: rgb(14, 190, 52);
+            color: white;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        input[type="button"] {
+            width: 60px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: rgb(14, 190, 52);
+            color: white;
+        }
+
+        div {
+            background-color: rgb(218, 213, 213);
+            width: 300px;
+            height: 50px;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add new Product</h2>
+    <div>
+        <input type="text" id="addpro">
+        <input type="button" value="Add" placeholder="New product" onclick="myAdd()">
+    </div>
+    <p id="table"></p>
+    <script>
+        let proName = ["Sony Xperia", "SamsungGalaxy", "Nokia 6", "Xiaomi Redmi Note4",
+            "Apple iPhone 6S", "Xiaomi Mi 5s Plus", "Apple iPhone 8 Plus", "Fujitsu F-04E", "Oppp A71"]
+        function display() {
+            let txt = "<table>";
+            txt += '<h2>Display All Product</h2>';
+            txt += "<tr>";
+            txt += "<th style='text-align: left'>Product Name</th>";
+            txt += "<td></td>";
+            txt += "<td id='things' style='color: red; text-align:right'></td>";
+            txt += "</tr >";
+            for (let i = 0; i < proName.length; i++) {
+                txt += "<tr>";
+                txt += "<td>" + proName[i] + "</td>";
+                txt += "<td>" + "<button style=' width:60px;height: 40px;' onclick='myEdit(" + i + ")'>Edit</button>" + "</td>";
+                txt += "<td>" + "<button style=' width:80px;height: 40px;'onclick='myDelete(" + i + ")'>Delete</button>" + "</td>";
+                txt += "</tr>";
+            }
+            txt += "</table>"
+            document.getElementById("table").innerHTML = txt;
+            document.getElementById("things").innerHTML = proName.length + " products";
+        }
+        function myDelete(p) {
+            proName.splice(p, 1);
+            display();
+        }
+        function myEdit(c) {
+            b = prompt("Please enter new name");
+            if (b !== null) {
+                proName[c] = b;
+            }
+            display();
+        }
+        function myAdd() {
+            x = document.getElementById("addpro").value;
+            if(x!=""){
+                 proName.push(x);
+            }
+            display();
+        }
+        display();
+    </script>
+</body>
+
+</html>
