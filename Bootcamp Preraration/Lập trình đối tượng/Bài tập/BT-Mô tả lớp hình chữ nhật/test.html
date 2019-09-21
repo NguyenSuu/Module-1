@@ -6,36 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="myCanvas" width="1368" height="768" style="border:1px solid #d3d3d3;"></canvas>
 </head>
 
 <body>
 
     <script>
-        function Rectangle() {
+        function Rectangle(width, height) {
             this.width = width;
             this.height = height;
+
+            this.getCircuit = function () {
+                return 2 * (width + height);
+            }
+            this.getArea = function () {
+                return width * height;
+            }
+            this.expPictura = function () {
+                let ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(200, 200, this.width, this.height);
+            }
         }
-        function getRandomHed() {
-            return Math.floor(Math.random() * 255);
-        }
-        function getRandomColor() {
-            let red = getRandomHed(),
-                green = getRandomHed(),
-                blue = getRandomHed();
-            return "rgb(" + red + "," + green + "," + blue + ")";
-        }
-        function createRectangle() {
-            let ctx = document.getElementById("myCanvas").getContext("2d");
-            let width = prompt("Enter width");
-            let height = prompt("Enter height");
-            let rectangle = new Rectangle(width,height);
-            let color = getRandomColor();
-            ctx.beginPath();
-            cxt.fillStyle = color;
-            ctx.fillRect(0, 0, rectangle.width, Rectangle.height);
-        }
-        createRectangle();
+        let width = parseInt(prompt("Enter width")),
+            height = parseInt(prompt("Enter height")),
+            rectangle = new Rectangle(width, height);
+        alert("Area= " + rectangle.getArea());
+        alert("Circuit= " + rectangle.getCircuit());
+        rectangle.expPictura();
     </script>
 </body>
 

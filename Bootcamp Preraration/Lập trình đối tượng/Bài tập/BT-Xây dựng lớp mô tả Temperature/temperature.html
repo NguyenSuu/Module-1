@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class temparature {
+            constructor(brand) {
+                if (brand >=-273) {
+                    this.C = brand;
+                }
+            }
+            changeToF() {
+                return (this.C * 9 / 5) + 32;
+            }
+            changeToKevin() {
+                return this.C + 273.15;
+            }
+        }
+        let Temparature = new temparature(25);
+        document.write(Temparature.changeToF());
+        document.write("<br>");
+        document.write(Temparature.changeToKevin());
+    </script>
+</body>
+
+</html>

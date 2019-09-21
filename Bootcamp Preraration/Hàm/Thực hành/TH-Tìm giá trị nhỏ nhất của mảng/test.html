@@ -14,10 +14,10 @@
             arr2 = [7, 12, 6, 9, 20, 56, 89],
             arr3 = [],
             arr4 = [0, 0, 0, 0, 0, 0];
-        function minArray(arr,position) {
+        function minArray(arr) {
             if (arr.length == 0)
                 return -1;
-            let min = arr[0];
+            let min = arr[0],
             position = 0;
             for (let i = 1; i < arr.length; i++) {
                 if (arr[i] < min) {
@@ -25,13 +25,19 @@
                     position = i;
                 }
             }
-            return min,position;
-        }let position;
-        // let min = minArray(arr1,position);
-        alert(minArray(arr1));
-        alert(position);
-        // min = minArray(arr2);
-        // alert(min);
+            return position;
+        }
+        let min = minArray(arr1);
+        alert(min);
+        
+        min = minArray(arr2);
+        alert(min);
+
+        min = minArray(arr3);
+        alert(min);
+
+        min = minArray(arr4);
+        alert(min);
     </script>
 </body>
 
