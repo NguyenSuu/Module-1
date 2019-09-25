@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isFirstLetterUpperCase(str) {
+            var regexp = /^[A-Z]/;
+            if (regexp.test(str)) {
+                document.write(str+": String's first charater is uppercase"+"</br>");
+            } else {
+                document.write(str+": String's first charater is not uppercase"+"</br>");
+            }
+        }
+        isFirstLetterUpperCase('Abcd');
+        isFirstLetterUpperCase('abcd');
+        isFirstLetterUpperCase('Nguyen van Nam');
+        isFirstLetterUpperCase('nguyen van Nam');
+        isFirstLetterUpperCase('NGUYEN VAN NAM');
+    </script>
+</body>
+
+</html>
