@@ -11,6 +11,7 @@
 
 <body>
     <script>
+        let ctx = document.getElementById("myCanvas").getContext("2d");
         function Circle(x, y, radius) {
             this.x = x;
             this.y = y;
@@ -27,36 +28,24 @@
             return "rgb(" + red + "," + green + "," + blue + ")";
         }
         function createCircle() {
-            
-            // let radius = Math.floor(Math.random() * 80 + 1);
-            // let x = Math.floor(Math.random() * window.innerWidth),
-            //     y = Math.floor(Math.random() * window.innerHeight);
-           
-            let circle = new Circle(x, y, radius);
-            // let color = getRandomColor();
+
+            let radius = Math.floor(Math.random() * 80 + 1),
+                x = Math.floor(Math.random() * window.innerWidth),
+                y = Math.floor(Math.random() * window.innerHeight),
+                circle = new Circle(x, y, radius),
+                color = getRandomColor();
             ctx.beginPath();
             ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-            ctx.fillStyle = "red";
+            ctx.fillStyle = color;
             ctx.fill();
             ctx.closePath();
-        } let x = 40,
-                 y = 50,
-               radius=40; 
-               let ctx = document.getElementById("myCanvas").getContext("2d");
-        setInterval(function () {
-            
-            ctx.clearRect(0, 0, 500, 500);
-            createCircle();
-            x += 2;
-            y += 2;
-        }, 200)
-
-        // function createMultipleCircle() {
-        //     for (let i = 0; i < 30; i++) {
-        //         createCircle();
-        //     }
-        // }
-        // createMultipleCircle();
+        }
+        function createMultipleCircle() {
+            for (let i = 0; i < 30; i++) {
+                createCircle();
+            }
+        }
+        createMultipleCircle();
     </script>
 </body>
 

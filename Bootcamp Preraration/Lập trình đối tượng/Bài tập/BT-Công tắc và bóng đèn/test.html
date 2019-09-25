@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<center>
+    <button onclick="turnOn()" style="width:50px;height:30px;border:3px solid yellow">On</button>
+    <button onclick="turnOff()"style="width:50px;height:30px;border:3px solid yellow">Off</button>
+</center>
+    
+
+    <img name="exp" src="nomal.jpg" alt="" width="100%" height="100%">
+    <script>
+        function Battery(energy) {
+            this.setEnergy = function () {
+                this.energy = energy;
+            }
+            this.getEnergy = function () {
+                return this.energy;
+            }
+            this.decreaseEnergy = function () {
+                if (this.energy > 0) {
+                    return this.energy--;
+
+                }
+            }
+        }
+        function Lamp(status, battery) {
+
+            this.status = status;
+            this.setBattery = function (battery) {
+                this.battery = battery;
+            }
+            this.getBatteryInfo = function () {
+                return battery.getEnergy();
+            }
+            this.turnOn = function () {
+                this.status = true;
+                document.exp.src = "haveLight.png";
+                this.check();
+            }
+            this.turnOff = function () {
+                this.status = false;
+                document.exp.src = "nomal.jpg";
+                this.check();
+            }
+            this.check = function () {
+                if (this.status==true) {
+                    useEnergy=setInterval(function () {
+                        battery.decreaseEnergy();
+                        console.log(battery.getEnergy());
+                        if (battery.getEnergy() == 0) {
+                            this.turnOff();
+                            
+                        }
+                        
+                    }
+
+                        , 100)
+                }else{
+                    clearInterval(useEnergy);
+                }
+            }
+
+        }
+        let batteryTT = new Battery(100);
+        batteryTT.setEnergy();
+        let lamp = new Lamp(true, batteryTT);
+        lamp.setBattery();
+        lamp.getBatteryInfo();
+        let useEnergy
+        function turnOn() {
+            lamp.turnOn();
+        }
+        function turnOff() {
+            lamp.turnOff();
+        }
+    </script>
+</body>
+
+</html>

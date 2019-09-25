@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Adam</h2>
+        <p id="weightAdam"></p>
+        <p id="genderAdam"></p>
+        <button onclick="adam.eatApple()">Eat</button>
+        <button onclick="adam.say()">Say</button>
+    </div>
+
+    <div>
+        <h2>Eva</h2>
+        <p id="weightEva"></p>
+        <p id="genderEva"></p>
+        <button onclick="eva.eatApple()">Eat</button>
+        <button onclick="eva.say()">Say</button>
+    </div>
+    <p id="display"></p>
+    <p id="conversation"></p>
+    <script>
+        function Apple(weight) {
+            this.weight = weight;
+            this.decrease = function () {
+                if (this.weight > 0) {
+                    return this.weight--;
+                }
+            }
+            this.getWeight = function () {
+                return this.weight;
+            }
+        }
+        function Human(name, gender, weight, apple) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.say = function () {
+                let text = prompt("Input words to say");
+                document.getElementById("conversation").innerHTML += this.name + " say: " + text + "</br>";
+            }
+
+            this.eatApple = function () {
+
+                if (apple.decrease() > 0) {
+                    this.weight += 1;
+                }
+                document.getElementById("display").innerHTML = "Apple: " + apple.weight + " pieces";
+                document.getElementById("weightEva").innerHTML = "Weight: " + eva.weight;
+                document.getElementById("weightAdam").innerHTML = "Weight: " + adam.weight;
+            }
+        }
+        let apple = new Apple(10),
+            adam = new Human("Adam", "Male", 60, apple),
+            eva = new Human("Eva", "Female", 45, apple);
+        document.getElementById("display").innerHTML= "Apple: " + apple.weight + " pieces";
+        document.getElementById("weightAdam").innerHTML = "Weight: " + adam.weight;
+        document.getElementById("genderAdam").innerHTML = "Gender: " + adam.gender;
+        document.getElementById("weightEva").innerHTML = "Weight: " + eva.weight;
+        document.getElementById("genderEva").innerHTML = "Gender: " + eva.gender;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="game"></p>
+    <script>
+        function Hero(image, y, x, size) {
+            this.image = image;
+            this.y = y;
+            this.x = x;
+            this.size = size;
+
+            this.getHeroElement = function () {
+                return '<img width="' + this.size + '"' +
+                    ' height="' + this.size + '"' +
+                    ' src="' + this.image + '"' +
+                    ' style="top: ' + this.y + 'px; left:' +
+                    this.x + 'px;position:absolute;" />';
+            }
+
+            this.moveRight = function () {
+                if (this.x <= window.innerWidth) {
+                    if (speed) {
+                        this.x += 50;
+                    } else {
+                        this.x += 20;
+                    }
+                }
+            }
+            this.moveLeft = function () {
+                if (this.x >= 0) {
+                    if (speed) {
+                        this.x -= 50
+                    } else {
+                        this.x -= 20;
+                    }
+                }
+            }
+            this.moveTop = function () {
+                if (this.y >= 0) {
+                    if (speed) {
+                        this.y -= 50;
+                    } else {
+                        this.y -= 20;
+                    }
+
+                }
+            }
+            this.moveBottom = function () {
+                if (this.y <= window.innerHeight) {
+                    if (speed) {
+                        this.y += 50;
+                    } else {
+                        this.y += 20;
+                    }
+
+                }
+            }
+        }
+        let movingLeft = false,
+            movingRight = false,
+            movingTop = false,
+            movingBottom = false,
+            speed = false;
+
+        let hero = new Hero('pikachu.png', 20, 30, 200);
+        document.addEventListener("keydown", function () {
+            console.log("KEY DOWN");
+            console.log(event);
+            if (event.keyCode == 17) {
+                speed = true;
+            }
+            if (event.keyCode == 37) {
+                movingLeft = true;
+            } else if (event.keyCode == 39) {
+                movingRight = true;
+            } else if (event.keyCode == 40) {
+                movingBottom = true;
+            } else if (event.keyCode == 38) {
+                movingTop = true;
+            }
+        })
+        document.addEventListener("keyup", function () {
+            console.log("KEY UP");
+            console.log(event);
+            if (event.keyCode == 17) {
+                speed = false;
+            }
+            if (event.keyCode == 37) {
+                movingLeft = false;
+            } else if (event.keyCode == 39) {
+                movingRight = false;
+            } else if (event.keyCode == 40) {
+                movingBottom = false;
+            } else if (event.keyCode == 38) {
+                movingTop = false;
+            }
+        })
+        function heroMoving() {
+            if (movingLeft) {
+                hero.moveLeft();
+            } else if (movingRight) {
+                hero.moveRight();
+            } else if (movingTop) {
+                hero.moveTop();
+            } else if (movingBottom) {
+                hero.moveBottom();
+            }
+        }
+        function start() {
+            heroMoving();
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 50)
+        }
+        start();
+    </script>
+</body>
+
+</html>
