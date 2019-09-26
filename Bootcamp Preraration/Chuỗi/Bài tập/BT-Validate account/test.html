@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkAccount(str) {
+            regexp = /^[_a-z0-9]{6,}$/;
+            if (regexp.test(str)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(checkAccount('123abc_'));
+        console.log(checkAccount('_abc123'));
+        console.log(checkAccount('abcdeF'));
+        console.log(checkAccount('.@'));
+        console.log(checkAccount('abcde'));
+    </script>
+</body>
+</html>
